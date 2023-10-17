@@ -62,18 +62,41 @@
 
 
 
+import React, { useState } from "react";
 import "./Register.css";
-// import React, { useState } from 'react';
-const Register=()=>{
-    return(
-        <form className="container">
-        <div className="header">
-            <h1>Registration Form</h1>
-        </div>
 
-        </form>
-        
+const Register = () => {
+  const [inputData, setInputData] = useState({ name: "", email: "", password: "" });
 
-    );
-}
+  const handleData = (e) => {
+    setInputData({ ...inputData, [e.target.name]: e.target.value });
+    console.log(inputData);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!inputData.name || !inputData.email || !inputData.password) {
+      alert("All fields are mandatory");
+    }
+    else{
+        alert ("Register Successfully")
+    }
+  };
+
+  return (
+    <form className="register" onSubmit={handleSubmit}>
+      <h1>Register</h1>
+      <input type="text" name="name" placeholder="Enter Name" value={inputData.name} onChange={handleData} />
+      <input type="text" name="email" placeholder="Enter Email" value={inputData.email} onChange={handleData} />
+      <input type="text" name="password" placeholder="Enter password" value={inputData.password} onChange={handleData} />
+
+      <button type="submit" className="button">
+        Register
+      </button>
+      <div>or</div>
+      <div className="button">Login</div>
+    </form>
+  );
+};
+
 export default Register;
