@@ -5,10 +5,12 @@
 // import Header from './component/Header';
 // import Footer from "./component/Footer";
 import Register from './Register';
+// import Login from "./Login";
 
 function App() {
   return (
     <><Register/></>
+    // <Login/>
     
     // <BrowserRouter>
     //   <Header />
