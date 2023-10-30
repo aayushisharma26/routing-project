@@ -1,8 +1,10 @@
 import "./Register.css";
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function MyComponent() {
-  const [inputData, setInputData] = useState({ name: '', email: '' });
+  const navigate = useNavigate();
+  const [inputData, setInputData] = useState({ name: '', email: '', password: '' });
 
   const handleData = (e) => {
     const { name, value } = e.target;
@@ -27,13 +29,15 @@ function MyComponent() {
       })
       .then((data) => {
         console.log('Response:', data);
-        setInputData(data)
-        alert("register is successfull")
+        setInputData(data);
+        alert("Register is successful");
+        navigate('/login'); // Use navigate function from useNavigate hook
       })
       .catch((error) => {
         console.error('Error:', error);
       });
   };
+
   return (
     <div className="register">
       <h1>Register</h1>
@@ -42,39 +46,32 @@ function MyComponent() {
         name="name"
         placeholder="Enter Name"
         value={inputData.name}
-        onChange={(e) => handleData(e.target.value)}
+        onChange={handleData}
       />
       <input
         type="text"
         name="email"
         placeholder="Enter Email"
         value={inputData.email}
-        onChange={(e) => handleData(e.target.value)}
+        onChange={handleData}
       />
       <input
-        type="text"
+        type="password"
         name="password"
         placeholder="Enter password"
         value={inputData.password}
-        onChange={(e) => handleData(e.target.value)}
+        onChange={handleData}
       />
 
       <div className="button" onClick={handleSubmit}>
         Register
       </div>
       <div>or</div>
-      <div className="button">Login</div>
+      <div className="button" onClick={() => navigate('/login')}>
+        Login
+      </div>
     </div>
   );
-  
-
-
-
-
-
-
-
-  
 }
 
 export default MyComponent;

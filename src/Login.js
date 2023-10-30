@@ -1,18 +1,59 @@
-import "./Login.css"
-import React from "react"
+import "./Login.css";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+    const navigate = useNavigate();
+
+    const [user, setUser] = useState({
+        email: "",
+        password: ""
+    });
+
+    const storeData = (e) => {
+        const { name, value } = e.target;
+        setUser({ ...user, [name]: value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        fetch("http://localhost:4000/loginpost", { // Added 'http://' to the URL
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log('Response:', data);
+                alert("Login is successful");
+                navigate('/register');
+
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    };
+
     return (
         <form className="register">
             <h1>Login</h1>
-            <input type="text" name="email" placeholder="Enter Email"  />
-            <input type="text" name="password" placeholder="Enter password"  />
-
-            <button type="submit" className="button">
+            <input type="text" name="email" placeholder="Enter Email" value={user.email} onChange={storeData} />
+            <input type="password" name="password" placeholder="Enter password" value={user.password} onChange={storeData} /> {/* Changed input type to 'password' for the password field */}
+            <button type="submit" className="button" onClick={handleSubmit} >
                 Submit
             </button>
-        
+            <div>or</div>
+            <div className="button" onClick={() => navigate('/register')}>Register</div>
+
+
         </form>
     );
+};
 
-}
 export default Login;
