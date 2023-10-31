@@ -1,11 +1,12 @@
 import React from "react";
 import "./contact.css";
-
+import  Header from "./component/Header" 
 const Contact = () => {
   return (
     <>
-      <div className="dry"></div>
-      <div className="dry1"></div>
+      <Header/>
+      <div className="dry">vb</div>
+      <div className="dry1">cv</div>
 
     </>
   );

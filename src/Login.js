@@ -16,7 +16,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("http://localhost:4000/loginpost", { // Added 'http://' to the URL
+        fetch("http://localhost:4000/loginpost", { 
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
