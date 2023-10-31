@@ -54,6 +54,8 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "./component/Footer";
+import Header from "./component/Header";
+
 
 function Home() {
   const [data, setData] = useState([]); // Initialize data as an empty array
@@ -77,6 +79,7 @@ function Home() {
 
   return (
     <>
+      <Header/>
       <Outlet />
       {/* <div className="home-page"> */}
         {/* <div className="row"> */}

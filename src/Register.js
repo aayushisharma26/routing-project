@@ -2,7 +2,7 @@ import "./Register.css";
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function MyComponent() {
+function Register() {
   const navigate = useNavigate();
   const [inputData, setInputData] = useState({ name: '', email: '', password: '' });
 
@@ -31,7 +31,7 @@ function MyComponent() {
         console.log('Response:', data);
         setInputData(data);
         alert("Register is successful");
-        navigate('/login'); // Use navigate function from useNavigate hook
+         // Use navigate function from useNavigate hook
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -67,11 +67,9 @@ function MyComponent() {
         Register
       </div>
       <div>or</div>
-      <div className="button" onClick={() => navigate('/login')}>
-        Login
-      </div>
+      <button  className="button" onClick={()=>navigate("/login")}>login</button>
     </div>
   );
 }
 
-export default MyComponent;
+export default Register;

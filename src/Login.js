@@ -32,7 +32,7 @@ const Login = () => {
             .then((data) => {
                 console.log('Response:', data);
                 alert("Login is successful");
-                navigate('/register');
+                
 
             })
             .catch((error) => {
@@ -41,15 +41,15 @@ const Login = () => {
     };
 
     return (
-        <form className="register">
+        <form className="register" onClick={handleSubmit}>
             <h1>Login</h1>
             <input type="text" name="email" placeholder="Enter Email" value={user.email} onChange={storeData} />
             <input type="password" name="password" placeholder="Enter password" value={user.password} onChange={storeData} /> {/* Changed input type to 'password' for the password field */}
-            <button type="submit" className="button" onClick={handleSubmit} >
+            <button type="submit" className="button"  onClick={()=>navigate("/homepage")}>
                 Submit
             </button>
             <div>or</div>
-            <div className="button" onClick={() => navigate('/register')}>Register</div>
+            <div className="button" >Register</div>
 
 
         </form>

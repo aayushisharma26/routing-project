@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import Home from './Home';
+import Home from './Home';
 // import About from './About';
 // import Contact from './Contact';
 // import Header from './component/Header';
 // import Footer from "./component/Footer";
-import Register from './Register';
 import Login from "./Login";
+import Register from "./Register";
+
 
 function App() {
   return (
@@ -18,9 +19,12 @@ function App() {
       {/* <Login/> */}
       
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-        <Route  exact path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+      <Route  exact path="/" element={<Register />} />
+      <   Route path="/login" element={<Login />} />
+          <Route path="/homepage" element={<Home />} />
+        {/* <Route  exact path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} /> */}
+
       </Routes>
       {/* <Footer/> */}
     </BrowserRouter>
@@ -29,8 +33,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
