@@ -19,17 +19,19 @@ solidcolor {
 /* CSS */
 .col {
   border: 2px solid rgb(27, 15, 190);
-  width: 314px;
-  height: 438px;
+  width: 301px;
+  height: 268px;
   display: inline-flex;
+  margin-right: 7px;
+  margin-bottom: 17px;
 }
 
 .row {
   border: 2px solid #f32929;
-  width: 400px;
-  height: 900px;
-  display: inline;
+  width: 98%;
+  height: 271px;
   /* display: inline-block; */
+  margin:0px 0px 0px 17px;
 }
 
 .home-page{
@@ -51,3 +53,36 @@ solidcolor {
   text-align: center;
 }
 
+img{
+  height: 267px;
+  width: 297px;
+}
+button{
+  background-color:rgb(175, 138, 138);
+}
+
+.row1{
+  height:300px;
+  width: 900px;
+  border: 2px solid black;
+  margin:11px 0px 4px 195px;
+
+}
+.column1{
+  height:300px;
+  width:300px;
+  border: 2px solid black;
+  float:left;
+
+
+}
+.column2{
+  height:300px;
+  width:534px;
+  border: 2px solid rgb(224, 54, 54);
+  float: right;
+
+}
+.column1 img{
+  height: 301px;
+}
