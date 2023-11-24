@@ -1,15 +1,15 @@
-import {NavLink} from "react-router-dom";
-const Header =() => {
-    return(
+import { NavLink } from "react-router-dom";
+const Header = () => {
+    return (
         <>
             <header>
-                
+
                 <nav>
                     <ul>
                         <li>
                             <NavLink to="/homepage">Home</NavLink>
                         </li>
-                        
+
                         <li>
                             <NavLink to="/about">About</NavLink>
                         </li>
@@ -17,12 +17,15 @@ const Header =() => {
                             <NavLink to="/contact">Contact</NavLink>
                         </li>
                     </ul>
-                </nav> 
+                    <label>First Name</label>
+                    <input class="w3-input" type="text"/>
+
+                </nav>
 
 
 
             </header>
-            
+
         </>
     )
 }

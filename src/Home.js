@@ -28,11 +28,15 @@ function Home() {
       <div className="row">
         {data?.meals?.map((item) => (
           <div className="col" key={item.idCategory}>
-            {/* Use Link to navigate to the MealDetail component */}
             <Link to={`/meal/${item.idCategory}`} state={{ meal: item }}>
               <img src={item.strCategoryThumb} alt={item.strCategory} />
             </Link>
+            
+            
           </div>
+          
+          
+          
         ))}
       </div>
       <Footer />
