@@ -6,6 +6,7 @@ import Contact from "./Contact";
 import Login from "./Login";
 import Register from "./Register";
 import MealDetail from "./MealDetail";
+import MealForm from "./MealForm";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/meal/:id" element={<MealDetail />} />
+        <Route path="/mealform" element={<MealForm />} />
+
       </Routes>
     </BrowserRouter>
   );
